@@ -1,0 +1,250 @@
+/* ========================================================== */
+/* DETAIL PAGE */
+.detail {
+  background: #f0f3fa;
+  min-height: calc(100vh - 54px);
+  display: flex;
+  flex-direction: column;
+}
+
+.detail__container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  width: 100%;
+}
+
+.detail__back-btn {
+  background: none;
+  border: none;
+  color: #8ab0e8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* hero */
+.detail__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.detail__image-wrap {
+  position: relative;
+}
+
+.detail__deco-tl {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  color: #c5cce8;
+  font-size: 1.2rem;
+}
+
+.detail__deco-br {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  color: #c5cce8;
+  font-size: 1.2rem;
+}
+
+.detail__image-box {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.detail__image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Info panel */
+.detail__categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail__category-badge {
+  background: #e4eaf8;
+  color: #7b8fcf;
+  border-radius: 20px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.detail__title {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #8ab0e8;
+  margin: 0 0 0.8rem;
+  line-height: 1.2;
+}
+
+.detail__description {
+  color: #777;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0 0 1.6rem;
+}
+
+/* stats card */
+.detail__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.9rem 0.5rem;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card__icon {
+  color: #8ab0e8;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.stat-card__label {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Bottom two columns */
+.detail__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* bahan */
+.ingredients-panel {
+  background: #dddaf7;
+  border-radius: 20px;
+  padding: 1.4rem 1.4rem 1.8rem;
+}
+
+.ingredients-panel__title {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #555;
+  margin: 0 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ingredients-panel__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.ingredients-panel__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.45rem 0;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.ingredients-panel__item-icon {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.ingredients-panel__tips {
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  margin-top: 0.8rem;
+}
+
+.ingredients-panel__tips p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* langkah */
+.steps-panel {
+  background: #f9d0d8;
+  border-radius: 20px;
+  padding: 1.4rem 1.6rem 1.8rem;
+}
+
+.steps-panel__title {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #555;
+  margin: 0 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.steps-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-item__number {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #888;
+  margin-top: 1px;
+}
+
+.step-item__title {
+  margin: 0 0 2px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.step-item__desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.55;
+}
