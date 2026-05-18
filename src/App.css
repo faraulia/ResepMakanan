@@ -32,8 +32,9 @@ body {
 .footer {
   background: #a8bfe8;
   text-align: center;
-  padding: 1.2rem;
-  font-size: 0.5rem;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  line-height: 1.8;
   color: #fff;
   margin-top: auto;
 }
@@ -144,7 +145,6 @@ body {
 }
 
 .recipe-card__title {
-  font-family: 'Pixelify Sans', monospace;
   font-size: 1.05rem;
   font-weight: 700;
   color: #333;

@@ -1,6 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 
+// react icons
+import { FiClock, FiUsers, FiHeart, FiShoppingBag } from "react-icons/fi";
+import { GiChefToque } from "react-icons/gi";
+import { RiSparklingFill } from "react-icons/ri";
+
 // ambil dari magnific/freepik
 const FOOD_IMAGES = {
   cheesecake: "https://img.magnific.com/free-photo/side-view-cheesecake-with-cherry-jelly-top-white-plate_141793-2955.jpg?t=st=1779114456~exp=1779118056~hmac=f7bb0f60ffd18e61de90170a3103da28c33f07fd749161abd64ecea6848962dc&w=1480",
@@ -14,7 +19,7 @@ const recipes = [
     id: "cheesecake",
     title: "Cheesecake Klasik",
     image: FOOD_IMAGES.cheesecake,
-    categories: ["Hidangan Utama", "Tradisional"],
+    categories: ["Dessert", "Mudah Dibuat"],
     description:
       "Cheesecake sederhana dengan tekstur lembut, creamy, dan rasa manis yang pas.",
     time: "45 Menit",
@@ -110,41 +115,6 @@ const recipeShorts = [
   { id: "cupcake", title: "Cupcake", image: FOOD_IMAGES.cupcake, desc: "Cupcake lembut dengan rasa manis ringan, cocok untuk camilan atau hidangan penutup." },
   { id: "mochi", title: "Mochi", image: FOOD_IMAGES.mochi, desc: "Mochi kenyal dengan isian manis yang lembut, cocok untuk camilan keluarga." },
 ];
-
-// icons
-const ClockIcon = () => (
-  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
-  </svg>
-);
-const ForkIcon = () => (
-  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
-    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2" /><line x1="7" y1="2" x2="7" y2="22" />
-    <path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zM16 22v-3" />
-  </svg>
-);
-const StarIcon = () => (
-  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-  </svg>
-);
-const BasketIcon = () => (
-  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
-    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" />
-    <path d="M16 10a4 4 0 01-8 0" />
-  </svg>
-);
-const ChefIcon = () => (
-  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
-    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" />
-    <path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" />
-  </svg>
-);
-const SpiceIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="#b8bef0">
-    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-  </svg>
-);
 
 // NAVBAR/HEADER
 function Navbar({ onLogoClick }) {
@@ -253,9 +223,9 @@ function DetailPage({ recipeId, onBack }) {
             {/* Stats cards */}
             <div className="detail__stats">
               {[
-                { icon: <ClockIcon />, label: recipe.time },
-                { icon: <ForkIcon />, label: recipe.serving },
-                { icon: <StarIcon />, label: recipe.difficulty },
+                { icon: <FiClock size={22} />, label: recipe.time },
+                { icon: <FiUsers size={22} />, label: recipe.serving },
+                { icon: <FiHeart size={22} />, label: recipe.difficulty },
               ].map((stat, i) => (
                 <div key={i} className="stat-card">
                   <div className="stat-card__icon">{stat.icon}</div>
@@ -271,12 +241,12 @@ function DetailPage({ recipeId, onBack }) {
           {/* Ingredients */}
           <div className="ingredients-panel">
             <h2 className="ingredients-panel__title">
-              <BasketIcon /> Bahan-Bahan
+              <FiShoppingBag size={20} /> Bahan-Bahan
             </h2>
             <ul className="ingredients-panel__list">
               {recipe.ingredients.map((ing, i) => (
                 <li key={i} className="ingredients-panel__item">
-                  <span className="ingredients-panel__item-icon"><SpiceIcon /></span>
+                  <span className="ingredients-panel__item-icon"><RiSparklingFill size={14} color="#b8bef0" /></span>
                   {ing}
                 </li>
               ))}
@@ -289,7 +259,7 @@ function DetailPage({ recipeId, onBack }) {
           {/* Steps */}
           <div className="steps-panel">
             <h2 className="steps-panel__title">
-              <ChefIcon /> Langkah Memasak
+              <GiChefToque size={20} /> Langkah Memasak
             </h2>
             <div className="steps-panel__list">
               {recipe.steps.map((step, i) => (
