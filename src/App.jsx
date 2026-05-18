@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 
+// ambil dari magnific/freepik
 const FOOD_IMAGES = {
   cheesecake: "https://img.magnific.com/free-photo/side-view-cheesecake-with-cherry-jelly-top-white-plate_141793-2955.jpg?t=st=1779114456~exp=1779118056~hmac=f7bb0f60ffd18e61de90170a3103da28c33f07fd749161abd64ecea6848962dc&w=1480",
   cupcake: "https://img.magnific.com/free-photo/chocolate-cupcake-with-white-cream-white-background_1268-31446.jpg?t=st=1779114616~exp=1779118216~hmac=f9ccd9e9709df1090d169db205fae2fd0d71c7147a4c4320474c624ed95c21cf&w=1480",
   mochi: "https://img.magnific.com/premium-photo/delicious-mochi-balls-served-bowl-with-chopsticks-textured-surface-perfect-dessert-lovers_732812-10859.jpg?w=1480",
 };
 
+// resep
 const recipes = [
   {
     id: "cheesecake",
@@ -14,9 +16,9 @@ const recipes = [
     image: FOOD_IMAGES.cheesecake,
     categories: ["Hidangan Utama", "Tradisional"],
     description:
-      "Cheesecake lembut dengan rasa creamy, manis ringan, dan tekstur padat halus yang memanjakan lidah.",
-    time: "55 Menit",
-    serving: "6 Porsi",
+      "Cheesecake sederhana dengan tekstur lembut, creamy, dan rasa manis yang pas.",
+    time: "45 Menit",
+    serving: "4 Porsi",
     difficulty: "Mudah",
     ingredients: [
       "200 gram biskuit marie atau digestive biscuit",
@@ -104,12 +106,12 @@ const recipes = [
 ];
 
 const recipeShorts = [
-  { id: "cheesecake", title: "Cheesecake", image: FOOD_IMAGES.cheesecake, desc: "Nasi goreng sederhana dengan bumbu rahasia dan topping melimpah." },
-  { id: "cupcake", title: "Cupcake", image: FOOD_IMAGES.cupcake, desc: "Kuah kuning yang kaya rempah, pas untuk cuaca dingin." },
-  { id: "mochi", title: "Mochi", image: FOOD_IMAGES.mochi, desc: "Menu cepat saji yang selalu jadi favorit keluarga." },
+  { id: "cheesecake", title: "Cheesecake", image: FOOD_IMAGES.cheesecake, desc: "Cheesecake sederhana dengan tekstur lembut, creamy, dan rasa manis yang pas." },
+  { id: "cupcake", title: "Cupcake", image: FOOD_IMAGES.cupcake, desc: "Cupcake lembut dengan rasa manis ringan, cocok untuk camilan atau hidangan penutup." },
+  { id: "mochi", title: "Mochi", image: FOOD_IMAGES.mochi, desc: "Mochi kenyal dengan isian manis yang lembut, cocok untuk camilan keluarga." },
 ];
 
-// ——— ICONS ———
+// icons
 const ClockIcon = () => (
   <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
@@ -144,7 +146,7 @@ const SpiceIcon = () => (
   </svg>
 );
 
-// ——— NAVBAR ———
+// NAVBAR/HEADER
 function Navbar({ onLogoClick }) {
   return (
     <nav className="navbar">
@@ -155,16 +157,17 @@ function Navbar({ onLogoClick }) {
   );
 }
 
-// ——— FOOTER ———
+// FOOTER
 function Footer() {
   return (
     <footer className="footer">
-      © 2026 Dapur Resep
+      ©2026 Dapur Resep
+      <br />Images by <b>Magnific</b>/<b>Freepik Company</b>
     </footer>
   );
 }
 
-// ——— LANDING PAGE ———
+// LANDING PAGEE
 function LandingPage({ onViewRecipe }) {
   return (
     <div className="landing">
@@ -177,11 +180,11 @@ function LandingPage({ onViewRecipe }) {
           <span className="landing__title--badge">Mudah</span>
         </h1>
         <p className="landing__subtitle">
-          Dapur Resep membantu kamu memahami bahan masakan sehari-hari lewat kurasi menu yang dipersonalisasi khusus untuk mood kamu hari ini.
+          Dapur Resep membantu kamu menemukan inspirasi dessert rumahan yang sederhana, manis, dan cocok untuk dibuat kapan saja.
         </p>
         <p className="landing__section-label">RESEP PILIHAN</p>
         <p className="landing__section-desc">
-          Semua yang kamu butuhkan<br />untuk memanjakan lidah
+          Pilihan dessert sederhana<br />untuk dicoba di rumah.
         </p>
       </div>
 
@@ -211,7 +214,7 @@ function LandingPage({ onViewRecipe }) {
   );
 }
 
-// ——— DETAIL PAGE ———
+// DETAIL PAGEE
 function DetailPage({ recipeId, onBack }) {
   const recipe = recipes.find(r => r.id === recipeId);
   if (!recipe) return null;
@@ -308,7 +311,7 @@ function DetailPage({ recipeId, onBack }) {
   );
 }
 
-// ——— APP ———
+// APP
 export default function App() {
   const [page, setPage] = useState("landing");
   const [selectedRecipe, setSelectedRecipe] = useState(null);

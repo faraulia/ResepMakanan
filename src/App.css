@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
 
-/* ===== GLOBAL ===== */
+/* global font */
 * {
   box-sizing: border-box;
 }
@@ -10,7 +10,7 @@ body {
   font-family: sans-serif;
 }
 
-/* ===== NAVBAR ===== */
+/* navbar */
 .navbar {
   background: #a8bfe8;
   padding: 0 2rem;
@@ -28,18 +28,17 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer {
   background: #a8bfe8;
   text-align: center;
   padding: 1.2rem;
-  font-family: 'Pixelify Sans', monospace;
-  font-size: 0.78rem;
+  font-size: 0.5rem;
   color: #fff;
   margin-top: auto;
 }
 
-/* ===== APP WRAPPER ===== */
+/* wrapper */
 .app-wrapper {
   min-height: 100vh;
   display: flex;
@@ -47,7 +46,7 @@ body {
   font-family: sans-serif;
 }
 
-/* ===== LANDING PAGE ===== */
+/* LANDING PAGEEE */
 .landing {
   background: #f0f3fa;
   min-height: calc(100vh - 54px);
@@ -83,14 +82,15 @@ body {
 
 .landing__subtitle {
   color: #888;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   max-width: 480px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
 }
 
 .landing__section-label {
-  font-size: 0.7rem;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: #aaa;
   text-transform: uppercase;
@@ -98,13 +98,13 @@ body {
 }
 
 .landing__section-desc {
-  font-size: 1rem;
+  font-size: 0.7rem;
+  font-weight: bold;
   color: #e8809a;
-  font-family: 'Pixelify Sans', monospace;
   margin: 0 0 2rem;
 }
 
-/* Recipe Cards Grid */
+/* Resep Makanan Grid */
 .landing__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -176,7 +176,8 @@ body {
   background: #e8889a;
 }
 
-/* ===== DETAIL PAGE ===== */
+/* ========================================================== */
+/* DETAIL PAGE */
 .detail {
   background: #f0f3fa;
   min-height: calc(100vh - 54px);
@@ -203,7 +204,7 @@ body {
   gap: 4px;
 }
 
-/* Hero row */
+/* hero */
 .detail__hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -278,7 +279,7 @@ body {
   margin: 0 0 1.6rem;
 }
 
-/* Stats cards */
+/* stats card */
 .detail__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -314,7 +315,7 @@ body {
   align-items: start;
 }
 
-/* Ingredients panel */
+/* bahan */
 .ingredients-panel {
   background: #dddaf7;
   border-radius: 20px;
@@ -367,7 +368,7 @@ body {
   text-align: center;
 }
 
-/* Steps panel */
+/* langkah */
 .steps-panel {
   background: #f9d0d8;
   border-radius: 20px;
