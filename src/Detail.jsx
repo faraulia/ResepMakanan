@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import "./Detail.css";
 
 // react icons
@@ -10,7 +11,7 @@ const recipes = [
   {
     id: "cheesecake",
     title: "Cheesecake Klasik",
-    image: "https://img.magnific.com/free-photo/side-view-cheesecake-with-cherry-jelly-top-white-plate_141793-2955.jpg?t=st=1779114456~exp=1779118056~hmac=f7bb0f60ffd18e61de90170a3103da28c33f07fd749161abd64ecea6848962dc&w=1480",
+    image: "https://img.magnific.com/free-photo/side-view-cheesecake-with-cherry-jelly-top-white-plate_141793-2955.jpg?t=st=1779114456~exp=1779118056~hmac=f7bb0f60ffd18e61de90170a3103da28c33f07fd749161abd64ecea6848962dc&w=800",
     categories: ["Dessert", "Mudah Dibuat"],
     description:
       "Cheesecake sederhana dengan tekstur lembut, creamy, dan rasa manis yang pas.",
@@ -42,7 +43,7 @@ const recipes = [
   {
     id: "cupcake",
     title: "Cupcake Cokelat",
-    image: "https://img.magnific.com/free-photo/chocolate-cupcake-with-white-cream-white-background_1268-31446.jpg?t=st=1779114616~exp=1779118216~hmac=f9ccd9e9709df1090d169db205fae2fd0d71c7147a4c4320474c624ed95c21cf&w=1480",
+    image: "https://img.magnific.com/free-photo/chocolate-cupcake-with-white-cream-white-background_1268-31446.jpg?t=st=1779114616~exp=1779118216~hmac=f9ccd9e9709df1090d169db205fae2fd0d71c7147a4c4320474c624ed95c21cf&w=800",
     categories: ["Kue", "Dessert"],
     description:
       "Cupcake cokelat lembab dengan frosting krim yang kaya rasa, pas untuk segala suasana perayaan.",
@@ -73,7 +74,7 @@ const recipes = [
   {
     id: "mochi",
     title: "Mochi Isi",
-    image: "https://img.magnific.com/premium-photo/delicious-mochi-balls-served-bowl-with-chopsticks-textured-surface-perfect-dessert-lovers_732812-10859.jpg?w=1480",
+    image: "https://img.magnific.com/premium-photo/delicious-mochi-balls-served-bowl-with-chopsticks-textured-surface-perfect-dessert-lovers_732812-10859.jpg?w=800",
     categories: ["Jajanan", "Tradisional"],
     description:
       "Mochi kenyal dengan isian kacang manis, menu cepat saji yang selalu jadi favorit keluarga.",
@@ -115,6 +116,18 @@ export default function DetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const recipe = recipes.find((r) => r.id === id);
+
+  // Preload the hero image so it's the highest priority fetch
+  useEffect(() => {
+    if (!recipe) return;
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = recipe.image;
+    document.head.appendChild(link);
+    return () => document.head.removeChild(link);
+  }, [recipe]);
+
   if (!recipe) return null;
 
   return (
@@ -132,7 +145,7 @@ export default function DetailPage() {
           <div className="detail__image-wrap">
             <span className="detail__deco-tl">+</span>
             <div className="detail__image-box">
-              <img src={recipe.image} alt={recipe.title} className="detail__image" />
+              <img src={recipe.image} alt={recipe.title} className="detail__image" fetchpriority="high" width="800" height="280" decoding="sync" />
             </div>
             <span className="detail__deco-br">+</span>
           </div>

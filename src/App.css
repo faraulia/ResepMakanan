@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap&font-display=swap');
 
 /* global */
 * {
@@ -128,6 +128,7 @@ body {
 .recipe-card__image-wrap {
   height: 200px;
   overflow: hidden;
+  aspect-ratio: 2 / 1;
 }
 
 .recipe-card__image {

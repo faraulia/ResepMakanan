@@ -3,11 +3,11 @@ import "./App.css";
 
 import DetailPage from "./Detail";
 
-// ambil dari magnific/freepik
+// ambil dari magnific/freepik — pakai w=800 bukan w=1480 biar lebih cepat
 const FOOD_IMAGES = {
-  cheesecake: "https://img.magnific.com/free-photo/side-view-cheesecake-with-cherry-jelly-top-white-plate_141793-2955.jpg?t=st=1779114456~exp=1779118056~hmac=f7bb0f60ffd18e61de90170a3103da28c33f07fd749161abd64ecea6848962dc&w=1480",
-  cupcake: "https://img.magnific.com/free-photo/chocolate-cupcake-with-white-cream-white-background_1268-31446.jpg?t=st=1779114616~exp=1779118216~hmac=f9ccd9e9709df1090d169db205fae2fd0d71c7147a4c4320474c624ed95c21cf&w=1480",
-  mochi: "https://img.magnific.com/premium-photo/delicious-mochi-balls-served-bowl-with-chopsticks-textured-surface-perfect-dessert-lovers_732812-10859.jpg?w=1480",
+  cheesecake: "https://img.magnific.com/free-photo/side-view-cheesecake-with-cherry-jelly-top-white-plate_141793-2955.jpg?t=st=1779114456~exp=1779118056~hmac=f7bb0f60ffd18e61de90170a3103da28c33f07fd749161abd64ecea6848962dc&w=800",
+  cupcake: "https://img.magnific.com/free-photo/chocolate-cupcake-with-white-cream-white-background_1268-31446.jpg?t=st=1779114616~exp=1779118216~hmac=f9ccd9e9709df1090d169db205fae2fd0d71c7147a4c4320474c624ed95c21cf&w=800",
+  mochi: "https://img.magnific.com/premium-photo/delicious-mochi-balls-served-bowl-with-chopsticks-textured-surface-perfect-dessert-lovers_732812-10859.jpg?w=800",
 };
 
 const recipeShorts = [
@@ -65,7 +65,7 @@ function LandingPage() {
         {recipeShorts.map((r) => (
           <div key={r.id} className="recipe-card">
             <div className="recipe-card__image-wrap">
-              <img src={r.image} alt={r.title} className="recipe-card__image" />
+              <img src={r.image} alt={r.title} className="recipe-card__image" loading="lazy" width="400" height="200" decoding="async" />
             </div>
             <div className="recipe-card__body">
               <h3 className="recipe-card__title">{r.title}</h3>
